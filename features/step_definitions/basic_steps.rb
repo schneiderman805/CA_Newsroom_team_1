@@ -12,7 +12,6 @@ Given("visit Sign up page") do
   visit new_user_registration_path
 end
 
-
 Given("I am logged in as {string}") do |email|
   @user = User.find_by email: email
   login_as @user, scope: :user
@@ -29,4 +28,8 @@ end
 
 When("I select {string} from {string}") do |option, selection|
   select option, from: `product.#{selection}`
+end
+
+Then /^show me the page$/ do
+  save_and_open_page
 end
