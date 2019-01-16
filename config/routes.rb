@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   namespace :cms do
-    resources :articles, only: [:index, :new, :create]
+    resources :articles
   end
 
 end

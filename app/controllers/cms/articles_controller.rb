@@ -7,7 +7,7 @@ class Cms::ArticlesController < ApplicationController
   def new
     @article = Article.new
   end
- 
+
   def create
     @article = Article.new(article_params)
     if @article.save
@@ -16,11 +16,32 @@ class Cms::ArticlesController < ApplicationController
       render 'new'
     end
   end
- 
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      flash[:notice] = "Article was successfully updated."
+      redirect_to cms_articles_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to cms_articles_path
+  end
+
   private
 
   def article_params
-    params.require(:article).permit(:title, :lede, :body, :author, :category_id)
+    params.require(:article).permit(:title, :lede, :body, :category_id, :user_id)
   end
 
 end

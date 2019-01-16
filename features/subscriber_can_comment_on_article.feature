@@ -19,7 +19,6 @@ Feature: Subscriber can comment on article
     And I click "A breaking news item"
 
   Scenario: Successfully submit a comment
-    When I fill in "Commenter" with "William"
     And I fill in "Body" with "This is my comment"
     And I click "Create Comment"
     Then I should see "William"
