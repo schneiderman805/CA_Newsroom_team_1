@@ -1,5 +1,14 @@
+require 'faker'
+
 5.times do
-    Article.create(title: "Title", lede: "Lorem ipsum dolor sit amet.", body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", author:"author", category_id: 1, user_id: 1)
+  Article.create(
+    title: Faker::GreekPhilosophers.quote,
+    lede: Faker::DumbAndDumber.quote,
+    body: Faker::HowIMetYourMother.quote,
+    author: Faker::HowIMetYourMother.character,
+    category_id: 1, 
+    user_id: 1
+  )
 end
 
 User.create(email: "member@mail.com", password: "password", first_name: "Member", last_name: "Member", role: 0)
@@ -8,5 +17,6 @@ User.create(email: "journalist@mail.com", password: "password", first_name: "Jou
 categories = ["Sports", "Politics", "Health", "Finance", "Entertainment"]
 
 categories.each do |category| 
-    Category.create(name: category)
+  Category.create(name: category)
 end
+
