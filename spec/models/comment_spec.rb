@@ -1,5 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'DB table' do
+    it { is_expected.to have_db_column :body }
+  end
+
+  describe 'Validations' do
+    it { is_expected.to validate_presence_of :body }    
+  end
+
+  describe FactoryBot do 
+    it 'should be valid' do
+      expect(create(:comment)).to be_valid
+    end
+  end
 end

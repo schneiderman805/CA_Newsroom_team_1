@@ -30,6 +30,7 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'faker', '~> 1.9', '>= 1.9.1'
 end
 
 group :development do

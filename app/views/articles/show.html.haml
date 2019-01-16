@@ -12,20 +12,23 @@
 - @article.comments.each do |comment|
   %p
     %strong Commenter:
-    = comment.commenter
+    = comment.user.first_name
+    = comment.user.last_name
   %p
     %strong Comment:
     = comment.body
 
-%h2 Add a comment:
-= form_with model: [ @article, @article.comments.build ], local: true do |form|
-  %p
-    = form.label :commenter
-    %br/
-    = form.text_field :commenter
-  %p
-    = form.label :body
-    %br/
-    = form.text_area :body
-  %p
-    = form.submit
+-if user_signed_in?
+  %h2 Add a comment:
+  = form_with model: [ @article, @article.comments.build ], local: true do |form|
+    %p
+      Commenter:
+      = current_user.first_name
+    %p
+      = form.hidden_field :user_id, value: current_user.id
+    %p
+      = form.label :body
+      %br/
+      = form.text_area :body
+    %p
+      = form.submit
