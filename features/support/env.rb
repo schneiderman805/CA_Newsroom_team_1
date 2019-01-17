@@ -29,3 +29,12 @@ Capybara.register_driver :selenium do |app|
 end
 
 Capybara.javascript_driver = :selenium
+
+Before '@stripe' do
+  chrome_options << 'headless'
+  StripeMock.start
+end
+
+After '@stripe' do 
+  StripeMock.stop
+end

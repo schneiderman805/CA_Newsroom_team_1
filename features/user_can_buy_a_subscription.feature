@@ -10,7 +10,6 @@ Feature: User can buy a subscription
             | Hanna      | Nyman     | hanna@tuna.se | password | journalist | 1  |
 
     Scenario: User can successfully buy a subscription
-        Given I am on the landing page
         And I am logged in as 'hanna@tuna.se'
         And I click 'Buy subscription'
         And I fill in the payment form
