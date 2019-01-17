@@ -2,6 +2,7 @@ class Cms::ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @users = User.all
   end
 
   def new
