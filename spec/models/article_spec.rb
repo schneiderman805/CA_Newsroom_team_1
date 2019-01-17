@@ -19,4 +19,16 @@ RSpec.describe Article, type: :model do
       expect(create(:article)).to be_valid 
     end
   end
+
+  describe 'Image attachment' do
+    let(:image){ File.open(fixture_path + '/basic_image.png')}
+
+    it 'can be attached to article' do
+      subject.image.attach(io: image, 
+                          filename: 'attachment_1.png', 
+                          content_type: 'image/png')
+      expect(subject.image).to be_attached
+    end
+  end
+
 end
