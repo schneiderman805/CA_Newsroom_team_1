@@ -16,6 +16,10 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 
 Chromedriver.set_version '2.33'
 
+chrome_options = %w[no-sandbox disable-popup-blocking disable-infobars]
+
+chrome_options << 'auto-open-devtools-for-tabs'
+
 Capybara.register_driver :selenium do |app|
   options = Selenium::WebDriver::Chrome::Options.new(
     args: %w( headless disable-popup-blocking disable-infobars)

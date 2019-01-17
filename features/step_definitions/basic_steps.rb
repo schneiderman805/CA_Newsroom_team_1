@@ -48,6 +48,6 @@ Given('I fill in the payment form') do
   end
 end
 
-Then("I wait {string} seconds") do |string|
-
+Then("I wait {string} seconds") do |int|
+  sleep int
 end

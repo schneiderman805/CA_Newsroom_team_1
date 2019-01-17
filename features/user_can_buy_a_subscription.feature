@@ -1,3 +1,4 @@
+@javascript @stripe
 Feature: User can buy a subscription
 
     As a user
