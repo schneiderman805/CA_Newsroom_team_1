@@ -19,8 +19,8 @@ const initiateStripe = () => {
 
     const elements = stripe.elements();
 
-    const card = elements.create('card')
-
+    const card = elements.create('card', {hidePostalCode: true})
+    
     card.mount('#card-element');
 
     const form = document.getElementById('transaction_form');
@@ -30,8 +30,6 @@ const initiateStripe = () => {
             stripeTokenHandler(result.token)
         })
     })
-
-
 }
 
 document.addEventListener('turbolinks:load', ()=>{

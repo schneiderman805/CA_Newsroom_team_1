@@ -45,7 +45,6 @@ Given('I fill in the payment form') do
 
     find_field('exp-date').send_keys('1221')
     find_field('cvc').send_keys('123')
-    find_field('postal').send_keys('12345')
   end
 end
 
