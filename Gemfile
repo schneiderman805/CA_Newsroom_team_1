@@ -18,6 +18,7 @@ gem 'devise'
 gem 'haml-rails', '~> 1.0'
 gem 'launchy'
 gem 'rails-i18n'
+gem 'stripe-rails'
 gem 'aws-sdk-s3'
 
 group :development, :test do
@@ -32,6 +33,7 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'stripe-ruby-mock', '~> 2.5.4', require: 'stripe_mock'
 end
 
 group :development do
