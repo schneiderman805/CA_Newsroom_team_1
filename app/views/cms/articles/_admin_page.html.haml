@@ -1,0 +1,10 @@
+%table
+    %tr
+        %th{align: "left"} Name
+        %th{align: "left"} Email
+        %th{align: "left"} Role
+    - users.each do | user |
+        %tr
+            %th{align: "left"}= "#{user.first_name} #{user.last_name} "
+            %th{align: "left"}= user.email
+            %th{align: "left"}= "Role: #{user.role}"
