@@ -15,11 +15,16 @@ Feature: Subscriber can comment on article
     | title                | lede                         | author  | category_id |
     | A breaking news item | hello this is about me       | Shahin  | 1           |
     And I visit the site
+
+  Scenario: Subscriber can submit a comment [happy path]
     And I am logged in as "will@gmail.com"
     And I click "A breaking news item"
-
-  Scenario: Successfully submit a comment
     And I fill in "Body" with "This is my comment"
     And I click "Create Comment"
     Then I should see "William"
     And I should see "This is my comment"
+
+  Scenario: Non-subscriber can not submit a comment [sad path]
+    And I click "A breaking news item"
+    Then I should not see "Body"
+    And I should not see "Create Comment"
