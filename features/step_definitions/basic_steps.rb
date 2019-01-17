@@ -35,3 +35,7 @@ end
 When("I select {string} from {string}") do |option, selection|
   select option, from: `product.#{selection}`
 end
+
+When("I attach a file") do
+  attach_file('article_image', "#{::Rails.root}/spec/fixtures/basic_image.png")
+end
