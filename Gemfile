@@ -17,6 +17,7 @@ gem 'tailwindcss', '~> 0.2.0'
 gem 'devise'
 gem 'haml-rails', '~> 1.0'
 gem 'launchy'
+gem 'aws-sdk-s3'
 
 group :development, :test do
   gem 'factory_bot_rails'
