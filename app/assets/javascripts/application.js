@@ -1,3 +1,8 @@
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require_tree .
+
 const stripeTokenHandler = (token) => {
     let stripeForm = document.getElementById('transaction_form')
     const hiddenInput = document.createElement('input')
@@ -10,7 +15,6 @@ const stripeTokenHandler = (token) => {
 }
 
 const initiateStripe = () => {
-
     const stripe = Stripe('pk_test_QicERB8w3kyqaYW3hUUQylRH');
 
     const elements = stripe.elements();

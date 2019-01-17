@@ -14,7 +14,7 @@ World(FactoryBot::Syntax::Methods)
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
-Chromedriver.set_version '2.33'
+Chromedriver.set_version '2.42'
 
 chrome_options = %w[no-sandbox disable-popup-blocking disable-infobars]
 

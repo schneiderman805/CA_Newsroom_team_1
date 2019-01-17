@@ -15,5 +15,5 @@ Feature: User can buy a subscription
         And I click 'Buy subscription'
         And I fill in the payment form
         And I click 'Pay'
-        Then I wait '2' seconds
+        Then I wait 2 seconds
         Then I should see 'You have become a subscriber!'
