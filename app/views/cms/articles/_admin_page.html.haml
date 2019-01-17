@@ -3,8 +3,15 @@
         %th{align: "left"} Name
         %th{align: "left"} Email
         %th{align: "left"} Role
+        %th{align: "left"} Change role
     - users.each do | user |
-        %tr
-            %th{align: "left"}= "#{user.first_name} #{user.last_name} "
-            %th{align: "left"}= user.email
-            %th{align: "left"}= "Role: #{user.role}"
+        - unless user.admin?
+            %tr
+                %th{align: "left"}= "#{user.first_name} #{user.last_name} "
+                %th{align: "left"}= user.email
+                %th{align: "left"}= "Role: #{user.role}"
+                - unless user.member?
+                    %th{align: "left"}=link_to "Member", cms_article_path(user, role: 'member'), method: :patch
+                - unless user.journalist?
+                    %th{align: "left"}=link_to "Journalist", cms_article_path(user, role: 'journalist'), method: :patch
+

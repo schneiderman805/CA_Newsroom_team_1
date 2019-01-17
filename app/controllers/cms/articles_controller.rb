@@ -23,12 +23,18 @@ class Cms::ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
-    if @article.update(article_params)
-      flash[:notice] = "Article was successfully updated."
+    if params[:role].present?
+      @user = User.find(params[:id])
+      @user.update_attribute(:role, params[:role])
       redirect_to cms_articles_path
     else
-      render 'edit'
+      @article = Article.find(params[:id])
+      if @article.update(article_params)
+        flash[:notice] = "Article was successfully updated."
+        redirect_to cms_articles_path
+      else
+        render 'edit'
+      end
     end
   end
 

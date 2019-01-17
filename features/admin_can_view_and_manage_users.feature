@@ -19,8 +19,7 @@ Feature: Admin can assign roles to users
         And I should see "Role: member"
     
     Scenario: Admin can change user roles
-        When I select "journalist" from "role"
-        And I click "Save"
+        When I click 'Journalist'
         Then I should see "William Schneiderman"
         And I should see "will@gmail.com"
         And I should see "Role: journalist"
