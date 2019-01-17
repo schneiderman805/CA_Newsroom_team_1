@@ -1,19 +1,19 @@
 Feature: Subscriber can comment on article
-  
+
   As a Subscriber
   In order to voice my opinion or ask questions
   I would like to be able to leave a comment on an article
 
   Background:
     Given the following user exists
-    | first_name  | last_name    | email          | password | role      |
-    | William     | Schneiderman | will@gmail.com | password | member    |
+      | first_name | last_name    | email          | password | role   |
+      | William    | Schneiderman | will@gmail.com | password | member |
     And the following categories exists
-    |name    | id |
-    |Sports  | 1  |
+      | name   | id |
+      | Sports | 1  |
     And the following articles exists
-    | title                | lede                         | author  | category_id |
-    | A breaking news item | hello this is about me       | Shahin  | 1           |
+      | title                | lede                   | author | category_id |
+      | A breaking news item | hello this is about me | Shahin | 1           |
     And I visit the site
 
   Scenario: Subscriber can submit a comment [happy path]
