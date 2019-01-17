@@ -1,12 +1,17 @@
-.navbar
-  %p= link_to 'Home', root_path
+.navbar.bg-red.list-reset.flex.pt-5.pb-5
+  %li.mr-6
+    %p= link_to 'Home', root_path
 
--if user_signed_in?
-  %p="Hello, #{current_user.first_name}!"
-  %p=link_to "Log out", destroy_user_session_path, method: :delete
-  -unless current_user.transactions.any? || current_user.journalist?
-    %p=link_to "Buy subscription", new_cms_transaction_path
--else
-  %p=link_to "Sign up", new_user_registration_path
-  %p=link_to "Log in", new_user_session_path
-
+  -if user_signed_in?
+    %li.mr-6
+      %p= "Hello, #{current_user.first_name}!"
+    %li.mr-6
+      %p= link_to "Log out", destroy_user_session_path, method: :delete
+    - unless current_user.transactions.any? || current_user.journalist?
+      .bg-white.font-semibold.hover:text-white.py-2.px-4.rounded
+        %p= link_to "Buy subscription", new_cms_transaction_path, class: 'text-black no-underline'
+  - else
+    %li.mr-6
+      %p= link_to "Sign up", new_user_registration_path
+    %li.mr-6
+      %p= link_to "Log in", new_user_session_path
