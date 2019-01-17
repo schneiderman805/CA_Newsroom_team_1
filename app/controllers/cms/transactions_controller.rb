@@ -14,7 +14,8 @@ class Cms::TransactionsController < ApplicationController
             description: "#{current_user.first_name} #{current_user.last_name} has purchased a monthly subscription"
         )
         if charge[:paid]
-            Transaction.new(amount: 100, user_id: current_user.id)
+            @transaction = Transaction.new(amount: 100, user_id: current_user.id)
+            @transaction.save
             redirect_to root_path,
             notice: "You have become a subscriber!"
         else
