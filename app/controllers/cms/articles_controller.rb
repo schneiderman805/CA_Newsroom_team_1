@@ -41,7 +41,7 @@ class Cms::ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :lede, :body, :category_id, :user_id)
+    params.require(:article).permit(:title, :lede, :body, :image, :category_id, :user_id)
   end
 
 end

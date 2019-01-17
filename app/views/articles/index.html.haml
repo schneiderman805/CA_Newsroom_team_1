@@ -6,7 +6,7 @@
 - @articles.each do |article|
   %h3= link_to "#{article.title}", article
   %p= article.category.name
-  %p= image_tag("article.jpg")  
+  %p= image_tag article.image if article.image.attached?  
   %p= article.lede
   %p 
     Author:

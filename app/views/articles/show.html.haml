@@ -1,6 +1,6 @@
 %h1= @article.title
 %p= @article.category.name
-%p= image_tag("article.jpg")
+%p= image_tag @article.image if @article.image.attached?  
 %p= @article.body
 %p 
   Author:
