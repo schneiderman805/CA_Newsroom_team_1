@@ -14,7 +14,11 @@ World(FactoryBot::Syntax::Methods)
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
-Chromedriver.set_version '2.36'
+Chromedriver.set_version '2.42'
+
+chrome_options = %w[no-sandbox disable-popup-blocking disable-infobars]
+
+chrome_options << 'auto-open-devtools-for-tabs'
 
 Capybara.register_driver :selenium do |app|
   options = Selenium::WebDriver::Chrome::Options.new(
@@ -29,3 +33,12 @@ Capybara.register_driver :selenium do |app|
 end
 
 Capybara.javascript_driver = :selenium
+
+Before '@stripe' do
+  chrome_options << 'headless'
+  StripeMock.start
+end
+
+After '@stripe' do 
+  StripeMock.stop
+end
