@@ -1,6 +1,6 @@
-.navbar.bg-red.list-reset.flex.pt-5.pb-5
+.navbar.bg-red.list-reset.flex.pt-5.pb-5.justify-end
   %li.mr-6
-    %p= link_to 'Home', root_path
+    = link_to "Home", root_path
 
   -if user_signed_in?
     %li.mr-6
