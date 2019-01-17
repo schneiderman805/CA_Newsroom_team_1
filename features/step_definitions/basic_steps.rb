@@ -51,3 +51,7 @@ end
 Then("I wait 2 seconds") do
   sleep 2
 end
+
+When("I attach a file") do
+  attach_file('article_image', "#{::Rails.root}/spec/fixtures/basic_image.png")
+end

@@ -16,6 +16,10 @@
   %p
     = form.label :body
     = form.text_area :body
+  %p
+    = form.label :image
+    = form.file_field :image
+    = form.hidden_field :user_id, value: current_user.id
   %br
     = form.label :category
     .Category= form.collection_select :category_id, Category.all, :id, :name 

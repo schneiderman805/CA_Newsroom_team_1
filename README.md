@@ -8,3 +8,4 @@ This is a simple news site.
 * Registered user can log in and log out
 * Journalist (only) can create article
 * Journalist can edit & delete their own articles
+* Journalist can add images to article 

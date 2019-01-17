@@ -18,6 +18,7 @@ gem 'devise'
 gem 'haml-rails', '~> 1.0'
 gem 'launchy'
 gem 'stripe-rails'
+gem 'aws-sdk-s3'
 
 group :development, :test do
   gem 'factory_bot_rails'
