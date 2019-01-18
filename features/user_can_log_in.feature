@@ -8,6 +8,7 @@ Feature: User can log in and out
     Given the following user exists
     | first_name  | last_name | email         | password | password_confirmation |
     | Hanna       | Nyman     | hanna@tuna.se | password | password              |
+    
     And I visit the site
     And I click 'Log in'
 

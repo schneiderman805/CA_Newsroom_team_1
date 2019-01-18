@@ -24,4 +24,5 @@
           %span= link_to 'Delete', cms_article_path(article),  |
                 method: :delete,                               |
                 data: { confirm: 'Are you super-duper sure?' } |
-
+-if current_user.admin?
+  = render partial: "admin_page", locals: { users: @users }

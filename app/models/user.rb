@@ -9,6 +9,6 @@ class User < ApplicationRecord
   
   validates_presence_of :first_name, :last_name, :email, :encrypted_password
 
-  enum role: { member: 0, journalist: 1, editor: 2 }
+  enum role: { member: 0, journalist: 1, editor: 2, admin: 3 }
 
 end
