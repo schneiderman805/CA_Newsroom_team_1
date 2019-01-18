@@ -9,3 +9,4 @@ This is a simple news site.
 * Journalist (only) can create article
 * Journalist can edit & delete their own articles
 * Subscriber can comment on articles
+* Journalist can add images to article 

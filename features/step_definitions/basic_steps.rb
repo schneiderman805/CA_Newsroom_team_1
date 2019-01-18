@@ -38,3 +38,7 @@ end
 Then ("show me the page") do
   save_and_open_page
 end
+
+When("I attach a file") do
+  attach_file('article_image', "#{::Rails.root}/spec/fixtures/basic_image.png")
+end
