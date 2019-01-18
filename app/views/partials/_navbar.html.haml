@@ -1,4 +1,4 @@
-%nav.flex.items-center.justify-between.flex-wrap.bg-red
+%nav.flex.items-center.justify-between.flex-wrap.bg-red.shadow-lg
   .flex.items-center.flex-no-shrink.text-white.mr-6
     = image_tag 'logo.png', id: 'logo'
   .w-full.block.flex-grow.lg:flex.lg:items-center.lg:w-auto
@@ -13,4 +13,4 @@
       %p.block.mt-4.lg:inline-block.lg:mt-0.text-white.mr-4
         = link_to "Log in", new_user_session_path, class: 'text-white no-underline ml-8 text-lg'
     %div
-      %a.inline-block.text-lg.px-8.py-4.mr-8.border.rounded.text-black.bg-white.ml-8{href: new_cms_transaction_path} Buy subscription
+      %a.inline-block.text-lg.px-8.py-4.mr-8.border.rounded.text-black.bg-white.ml-8.shadow-lg{href: new_cms_transaction_path} Buy subscription
