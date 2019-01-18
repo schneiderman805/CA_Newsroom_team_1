@@ -4,6 +4,7 @@ end
 
 User.create(email: "member@mail.com", password: "password", first_name: "Member", last_name: "Member", role: 0)
 User.create(email: "journalist@mail.com", password: "password", first_name: "Journo", last_name: "Journo", role: 1)
+User.create(email: "editor@mail.com", password: "password", first_name: "Editoro", last_name: "Edit", role: 2)
 
 categories = ["Sports", "Politics", "Health", "Finance", "Entertainment"]
 
