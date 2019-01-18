@@ -1,6 +1,6 @@
 %nav.flex.items-center.justify-between.flex-wrap.bg-red.shadow-lg
   .flex.items-center.flex-no-shrink.text-white.mr-6
-    = image_tag 'logo.png', id: 'logo'
+    = link_to image_tag("logo.png", id: "logo"), root_path
   .w-full.block.flex-grow.lg:flex.lg:items-center.lg:w-auto
     .text-sm.lg:flex-grow
     - if user_signed_in?
