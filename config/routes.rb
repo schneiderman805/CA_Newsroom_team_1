@@ -11,3 +11,8 @@ Rails.application.routes.draw do
     end
   end
 end
+    resources :articles
+    resources :transactions, only: [:new, :create]
+  end
+
+end
