@@ -39,3 +39,9 @@ Feature: Editor can manage articles
         Then I should see "Greg is coding god!"
         And I should see "This is the lede paragraph"
         And I should see "Politics"
+
+    @javascript
+    Scenario: Successfully delete an article
+        When I click "Delete" for "A breaking news item"
+        And I click to accept the alert message
+        Then I should not see "A breaking news item"
