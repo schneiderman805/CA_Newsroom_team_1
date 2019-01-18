@@ -11,10 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_01_16_070139) do
 =======
 ActiveRecord::Schema.define(version: 2019_01_16_152908) do
 >>>>>>> 11a31dc245f1cdc415390ccfb9a46bc727b8f617
+=======
+ActiveRecord::Schema.define(version: 2019_01_17_110411) do
+>>>>>>> 8f255bc825a277fd7240c4f256a031dc18eefe28
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,9 +69,20 @@ ActiveRecord::Schema.define(version: 2019_01_16_152908) do
     t.bigint "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.bigint "user_id"
+=======
+>>>>>>> 8f255bc825a277fd7240c4f256a031dc18eefe28
     t.index ["article_id"], name: "index_comments_on_article_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -89,5 +104,9 @@ ActiveRecord::Schema.define(version: 2019_01_16_152908) do
   add_foreign_key "articles", "categories"
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
+<<<<<<< HEAD
   add_foreign_key "comments", "users"
+=======
+  add_foreign_key "transactions", "users"
+>>>>>>> 8f255bc825a277fd7240c4f256a031dc18eefe28
 end

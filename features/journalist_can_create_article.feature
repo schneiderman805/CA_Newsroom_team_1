@@ -5,9 +5,10 @@ Feature: Create articles
 
   Background:
     Given the following user exists
-    | first_name  | last_name    | email          | password | role      | id |
-    | Hanna       | Nyman        | hanna@tuna.se  | password | journalist| 1  |
-    | William     | Schneiderman | will@gmail.com | password | member    | 2  |
+    | first_name  | last_name    | email          | password | role      |
+    | Hanna       | Nyman        | hanna@tuna.se  | password | journalist|
+    | William     | Schneiderman | will@gmail.com | password | member    |
+    
     And the following categories exists
     |name    |
     |Sports  |
