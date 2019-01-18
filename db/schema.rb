@@ -93,6 +93,9 @@ ActiveRecord::Schema.define(version: 2019_01_17_110411) do
   add_foreign_key "articles", "categories"
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
+<<<<<<< HEAD
   add_foreign_key "comments", "users"
+=======
+>>>>>>> 8f255bc825a277fd7240c4f256a031dc18eefe28
   add_foreign_key "transactions", "users"
 end
