@@ -55,3 +55,11 @@ end
 When("I attach a file") do
   attach_file('article_image', "#{::Rails.root}/spec/fixtures/basic_image.png")
 end
+
+When("I click {string} for {string}") do |button, article|
+  article = Article.find_by(title: article)
+  dom_section = "#article_#{article.id}" 
+  within(dom_section) do 
+      click_on button
+  end
+end
