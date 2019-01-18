@@ -22,10 +22,10 @@ Feature: Editor can manage articles
             | Learn Rails 5        | Lede2 | hello this is about that guy | 2           | 3       |
 
         And I am logged in as "hanna@tuna.se"
-        And I click "All Articles"
+        And I click "My account"
 
     Scenario: Editor can see all articles
         Then I should see "A breaking news item"
         And I should see "Lede1"
-        And I should see "Learn Rail 5"
+        And I should see "Learn Rails 5"
         And I should see "Lede2"
