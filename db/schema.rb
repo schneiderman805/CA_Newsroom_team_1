@@ -64,8 +64,6 @@ ActiveRecord::Schema.define(version: 2019_01_17_110411) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
-<<<<<<< HEAD
-=======
   create_table "transactions", force: :cascade do |t|
     t.integer "amount"
     t.datetime "created_at", null: false
@@ -74,7 +72,6 @@ ActiveRecord::Schema.define(version: 2019_01_17_110411) do
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
->>>>>>> 8f255bc825a277fd7240c4f256a031dc18eefe28
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -92,11 +89,7 @@ ActiveRecord::Schema.define(version: 2019_01_17_110411) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "categories"
-<<<<<<< HEAD
-  add_foreign_key "comments", "articles"
-=======
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "transactions", "users"
->>>>>>> 8f255bc825a277fd7240c4f256a031dc18eefe28
 end

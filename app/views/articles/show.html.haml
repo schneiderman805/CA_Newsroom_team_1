@@ -9,7 +9,7 @@
 = link_to 'back', articles_path
 
 %h2 Add a comment:
-= form_with(model: [ @article, @article.comments.build ], url_new_cms_article_comment_path, local: true) do |form|
+= form_with(model: [ @article, @article.comments.build ], url: new_cms_article_path, local: true) do |form|
   %p
     = form.label :commenter
     %br/

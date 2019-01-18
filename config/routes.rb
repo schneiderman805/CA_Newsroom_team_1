@@ -6,13 +6,7 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show]
 
   namespace :cms do
-    resources :articles, only: [:index, :new, :create] do
-      resources :comments
-    end
-  end
-end
     resources :articles
     resources :transactions, only: [:new, :create]
   end
-
 end
