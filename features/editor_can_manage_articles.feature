@@ -5,11 +5,7 @@ Feature: Editor can manage articles
     I would like be able to review, publish edit or delete
 
     Background:
-        Given the following categories exists
-            | name     | id |
-            | Sports   | 1  |
-            | Politics | 2  |
-        And the following user exists
+        Given the following user exists
             | first_name | last_name    | email          | password | role       | id |
             | Hanna      | Nyman        | hanna@tuna.se  | password | editor     | 1  |
             | William    | Schneiderman | will@gmail.com | password | journalist | 2  |
@@ -18,8 +14,8 @@ Feature: Editor can manage articles
 
         And the following articles exists
             | title                | lede  | body                         | category_id | user_id | published |
-            | A breaking news item | Lede1 | hello this is about me       | 1           | 2       | false     |
-            | Learn Rails 5        | Lede2 | hello this is about that guy | 2           | 3       | false     |
+            | A breaking news item | Lede1 | hello this is about me       | Sports      | William | false     |
+            | Learn Rails 5        | Lede2 | hello this is about that guy | Politics    | Adi     | false     |
 
         And I am logged in as "hanna@tuna.se"
         And I click "My account"

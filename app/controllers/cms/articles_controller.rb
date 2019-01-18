@@ -27,25 +27,17 @@ class Cms::ArticlesController < ApplicationController
       update_role
     elsif params[:publish].present?
       publish_article
-    elsif @article.update(article_params)
-      flash[:notice] = "Article was successfully updated."
     else
-      @article = Article.find(params[:id])
-      if @article.update(article_params)
-        flash[:notice] = "Article was successfully updated."
-        redirect_to cms_articles_path
-      else
-        render 'edit'
-      end
+      update_article
     end
   end
 
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-
     redirect_to cms_articles_path
   end
+
 
   private
 
@@ -63,6 +55,16 @@ class Cms::ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.update_attribute(:published, params[:publish])
     redirect_to cms_articles_path
+  end
+
+  def update_article
+    @article = Article.find(params[:id])
+      if @article.update(article_params)
+        flash[:notice] = "Article was successfully updated."
+        redirect_to cms_articles_path
+      else
+        render 'edit'
+      end
   end
 
 end

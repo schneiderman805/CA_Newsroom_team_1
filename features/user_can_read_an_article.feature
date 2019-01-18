@@ -5,13 +5,7 @@ Feature: User can see the details of a specific article
   I would like to be able to click on an article and have it displayed
 
   Background:
-    Given the following categories exists
-      | name     |
-      | Sports   |
-      | Politics |
-      | Health   |
-
-    And the following user exists
+    Given the following user exists
       | first_name | last_name | email         | password | role       |
       | Hanna      | Nyman     | hanna@tuna.se | password | journalist |
       | John       | Doe       | john@doe.se   | password | journalist |
