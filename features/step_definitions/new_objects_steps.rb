@@ -1,6 +1,9 @@
-Given("the following articles exists") do |table|
+Given('the following articles exists') do |table|
   table.hashes.each do |article|
-    article = create(:article, article)
+      user = User.find_by(first_name: article[:user_id])
+      category = Category.find_or_create_by(name: article[:category_id])
+      article.except!(article[:user_id]).except!(article[:category_id]).merge!(user_id: user.id).merge!(category_id: category.id)
+      FactoryBot.create(:article, article)
   end
 end
 
