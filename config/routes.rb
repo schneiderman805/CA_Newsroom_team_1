@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :articles, only: [:index, :show]
 
+  resources :categories, only: [:show]
+
   namespace :cms do
     resources :articles
     resources :transactions, only: [:new, :create]
