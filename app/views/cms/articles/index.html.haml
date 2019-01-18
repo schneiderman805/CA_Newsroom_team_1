@@ -5,6 +5,7 @@
     %th{align: "left"} Content
     %th{align: "left"} Category
     %th{align: "left"} Author
+    %th{align: "left"} Status
     %th{align: "center"} Actions
   - @articles.each do |article|
     -if article.user == current_user || "editor"
@@ -13,6 +14,10 @@
         %td= article.lede
         %td= article.category.name
         %td= article.user.first_name
+        -if article.published?
+          %td Published
+        -else
+          %td Not Published
         %td
           %span= link_to 'Show', article_path(article)
           %span= link_to 'Edit', edit_cms_article_path(article)

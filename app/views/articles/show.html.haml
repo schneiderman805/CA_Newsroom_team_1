@@ -7,4 +7,6 @@
   Author:
   = @article.user.first_name
 %p= @article.created_at.strftime("%F")
+-if current_user.editor?
+  =link_to 'Publish Article', cms_article_path(@article, {publish: true}), method: :patch
 = link_to 'back', articles_path 

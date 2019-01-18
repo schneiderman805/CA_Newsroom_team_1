@@ -17,9 +17,9 @@ Feature: Editor can manage articles
 
 
         And the following articles exists
-            | title                | lede  | body                         | category_id | user_id |
-            | A breaking news item | Lede1 | hello this is about me       | 1           | 2       |
-            | Learn Rails 5        | Lede2 | hello this is about that guy | 2           | 3       |
+            | title                | lede  | body                         | category_id | user_id | published |
+            | A breaking news item | Lede1 | hello this is about me       | 1           | 2       | false     |
+            | Learn Rails 5        | Lede2 | hello this is about that guy | 2           | 3       | false     |
 
         And I am logged in as "hanna@tuna.se"
         And I click "My account"
@@ -45,3 +45,8 @@ Feature: Editor can manage articles
         When I click "Delete" for "A breaking news item"
         And I click to accept the alert message
         Then I should not see "A breaking news item"
+
+    Scenario: Editor can publish articles
+        When I click "Show" for "A breaking news item"
+        And I click "Publish Article"
+        Then I should see "Published" in "A breaking news item"
