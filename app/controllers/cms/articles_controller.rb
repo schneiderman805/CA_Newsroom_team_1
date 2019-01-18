@@ -2,6 +2,7 @@ class Cms::ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @users = User.all
   end
 
   def new
@@ -22,12 +23,18 @@ class Cms::ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
-    if @article.update(article_params)
-      flash[:notice] = "Article was successfully updated."
+    if params[:role].present?
+      @user = User.find(params[:id])
+      @user.update_attribute(:role, params[:role])
       redirect_to cms_articles_path
     else
-      render 'edit'
+      @article = Article.find(params[:id])
+      if @article.update(article_params)
+        flash[:notice] = "Article was successfully updated."
+        redirect_to cms_articles_path
+      else
+        render 'edit'
+      end
     end
   end
 
@@ -41,7 +48,7 @@ class Cms::ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :lede, :body, :category_id, :user_id)
+    params.require(:article).permit(:title, :lede, :body, :image, :category_id, :user_id)
   end
 
 end

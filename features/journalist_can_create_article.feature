@@ -5,9 +5,10 @@ Feature: Create articles
 
   Background:
     Given the following user exists
-    | first_name  | last_name    | email          | password | role      | id |
-    | Hanna       | Nyman        | hanna@tuna.se  | password | journalist| 1  |
-    | William     | Schneiderman | will@gmail.com | password | member    | 2  |
+    | first_name  | last_name    | email          | password | role      |
+    | Hanna       | Nyman        | hanna@tuna.se  | password | journalist|
+    | William     | Schneiderman | will@gmail.com | password | member    |
+    
     And the following categories exists
     |name    |
     |Sports  |
@@ -31,6 +32,7 @@ Feature: Create articles
     And I fill in "Title" with "Learning Rails 5"
     And I fill in "Lede" with "This is the lede paragraph"
     And I fill in "Body" with "Excited about learning a new framework"
+    And I attach a file
     And I select "Politics" from "Category"
     And I click "Create Article" 
     Then I should be on journalist index page

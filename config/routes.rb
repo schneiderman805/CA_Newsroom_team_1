@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :cms do
     resources :articles
+    resources :transactions, only: [:new, :create]
   end
 
 end
