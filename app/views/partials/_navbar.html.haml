@@ -10,10 +10,12 @@
         %p.block.mt-4.lg:inline-block.lg:mt-0.text-white.mr-4
           = link_to "Users", cms_articles_path, class: 'text-white no-underline ml-8 text-lg'
       -if current_user.role == 'journalist'
-        %p.block.mt-4.lg:inline-block.lg:mt-0.text-white.mr-4
+        .block.mt-4.lg:inline-block.lg:mt-0.text-white.mr-4
           = link_to "My account", cms_articles_path, class: 'text-white no-underline ml-8 text-lg'
         %p.inline-block.text-lg.px-6.py-3.mr-8.border.rounded.text-black.bg-white.ml-8.shadow-logo
           = link_to "Log out", destroy_user_session_path, method: :delete, class: 'text-black no-underline'
+      %p.block.mt-4.lg:inline-block.lg:mt-0.text-white.mr-4
+        = link_to 'Log out', destroy_user_session_path, class: 'text-white no-underline ml-8 text-lg', method: :delete
       - unless current_user.transactions.any? || current_user.journalist? || current_user.admin?
         %a.inline-block.text-lg.px-6.py-3.mr-8.border.rounded.text-black.bg-white.ml-8.shadow-lg{href: new_cms_transaction_path} Buy subscription
     - else

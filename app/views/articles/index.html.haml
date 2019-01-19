@@ -1,6 +1,1 @@
-
--if user_signed_in?
-  -if current_user.role == 'journalist'
-    %p=link_to "My account", cms_articles_path 
-
 = render partial: 'partials/show_articles'
