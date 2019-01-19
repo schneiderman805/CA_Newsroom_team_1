@@ -17,6 +17,7 @@ gem 'tailwindcss', '~> 0.2.0'
 gem 'devise'
 gem 'haml-rails', '~> 1.0'
 gem 'launchy'
+gem 'rails-i18n'
 gem 'stripe-rails'
 gem 'aws-sdk-s3'
 
