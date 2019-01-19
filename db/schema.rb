@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2019_01_17_110411) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "commenter"
     t.text "body"
     t.bigint "article_id"
     t.datetime "created_at", null: false
