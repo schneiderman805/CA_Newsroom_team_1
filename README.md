@@ -28,6 +28,14 @@ This is a simple news site built using Ruby on Rails framework. Users can create
 * [Shahin](https://github.com/shahin1290)
 * [William](https://github.com/schneiderman805)
 
+# How to Use this code 
+* `git clone https://github.com/CraftAcademy/CA_Newsroom_team_1` in your local projects folder
+* `cd CA_Newsroom_team_1`
+* `bundle install` to deploy all gems
+* `yarn install` to install JS dependencies
+* `rake` to run all unit and acceptance tests
+* `rails s` to start rails server and to see the application running on `https://localhost:3000`
+
 # Testing Frameworks
 * [Rspec](http://rspec.info/) for unit testing
 * [Cucumber](https://cucumber.io/) for acceptance testing
