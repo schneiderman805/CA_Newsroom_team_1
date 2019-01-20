@@ -33,6 +33,7 @@ This is a simple news site built using Ruby on Rails framework. Users can create
 * `cd CA_Newsroom_team_1`
 * `bundle install` to deploy all gems
 * `yarn install` to install JS dependencies
+* `rails db:setup` to create and seed the database using seeds file. 
 * `rake` to run all unit and acceptance tests
 * `rails s` to start rails server and to see the application running on `https://localhost:3000`
 
