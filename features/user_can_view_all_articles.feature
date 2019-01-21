@@ -10,6 +10,7 @@ Feature: List articles on the index page
       | Sports   |
       | Politics |
       | Health   |
+      | Economy  |      
     And the following user exists
       | first_name | last_name | email         | password | role       |
       | Hanna      | Nyman     | hanna@tuna.se | password | journalist |
@@ -29,4 +30,9 @@ Feature: List articles on the index page
     Then I should see "Artiklar"
     And I should see "Författare"
 
-
+  Scenario: User can see category bar
+    When I visit the site
+    Then I should see 'Sports' in navbar
+    Then I should see 'Politics' in navbar
+    Then I should see 'Health' in navbar
+    Then I should see 'Economy' in navbar
