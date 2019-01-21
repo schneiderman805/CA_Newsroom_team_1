@@ -27,3 +27,8 @@ Feature: Subscriber can comment on article
     And I click "A breaking news item"
     Then I should not see "Body"
     And I should not see "Create Comment"
+
+  Scenario: Subscriber can not submit a blank comment [sad path]
+    And I click "A breaking news item"
+    Then I should not see "Body"
+    And I should not see "Create Comment"
