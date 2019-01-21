@@ -19,13 +19,10 @@
   %body
     = link_to_unless_current  "English", locale: 'en' 
     = link_to_unless_current  "Svenska", locale: 'sv' 
-    
     = render partial: 'partials/navbar'
     = render partial: 'partials/category_bar', locals: {categories: @categories}
-
     = notice
     = alert
-
     = yield
 
 
