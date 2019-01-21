@@ -11,8 +11,8 @@ Feature: Subscriber can comment on article
       | Bob        | Schneiderman | bob@gmail.com  | password | journalist |
 
     And the following articles exists
-      | title                | lede                   | author | category_id | user_id |
-      | A breaking news item | hello this is about me | Shahin | Sports      | Bob     |
+      | title                | lede                   | author | category_id | user_id | published |
+      | A breaking news item | hello this is about me | Shahin | Sports      | Bob     | true      |
     And I visit the site
 
   Scenario: Subscriber can submit a comment [happy path]
