@@ -1,4 +1,4 @@
-Given('the following articles exists') do |table|
+Given('the following articles exists:') do |table|
   table.hashes.each do |article|
       user = User.find_by(first_name: article[:user_id])
       category = Category.find_or_create_by(name: article[:category_id])
