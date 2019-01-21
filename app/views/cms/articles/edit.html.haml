@@ -19,7 +19,9 @@
   %p
     = form.label :image
     = form.file_field :image
-    = form.hidden_field :user_id, value: current_user.id
+  %p
+    = form.label :author
+    = form.label :user_id, value: @article.user.first_name
   %br
     = form.label :category
     .Category= form.collection_select :category_id, Category.all, :id, :name 

@@ -21,3 +21,11 @@ end
 Then("I am on Sign up page") do
   expect(current_path).to eq new_user_registration_path
 end
+
+Then("I should see {string} in {string}") do |content, article|
+  article = Article.find_by(title: article)
+  dom_section = "#article_#{article.id}" 
+  within(dom_section) do 
+      expect(page).to have_content content
+  end
+end
