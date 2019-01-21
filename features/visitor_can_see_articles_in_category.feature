@@ -13,7 +13,7 @@ Feature: Visitor can see articles in categories
       | Sports   |
       | Politics |
 
-    And the following articles exists:
+    And the following articles exists
       | title   | lede               | body                         | user_id | category_id | published |
       | News    | This is a news     | I like to eat cheese!        | Bill    | Sport       | true      |
       | Article | This is an article | I do not like to eat cheese! | Bill    | Weather     | true      |
