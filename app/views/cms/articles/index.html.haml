@@ -1,21 +1,28 @@
-- unless current_user.admin? 
-  = link_to 'New Article', new_cms_article_path
-
-  %h1 List of articles
-  %table
-    %tr
-      %th{align: "left"} Title
-      %th{align: "left"} Content
-      %th
-    - @articles.each do |article|
-      %tr
+%h1 List of articles
+%table
+  %tr
+    %th{align: "left"} Title
+    %th{align: "left"} Content
+    %th{align: "left"} Category
+    %th{align: "left"} Author
+    %th{align: "left"} Status
+    %th{align: "center"} Actions
+  - @articles.each do |article|
+    -if article.user == current_user || "editor"
+      %tr{id: dom_id(article)}
         %td= article.title
         %td= article.lede
-        %td= link_to 'Show', article_path(article)
-        %td= link_to 'Edit', edit_cms_article_path(article)
-        %td= link_to 'Delete', cms_article_path(article),  |
-            method: :delete,                               |
-            data: { confirm: 'Are you super-duper sure?' } |
-  %br/
--else
+        %td= article.category.name
+        %td= article.user.first_name
+        -if article.published?
+          %td Published
+        -else
+          %td Not Published
+        %td
+          %span= link_to 'Show', article_path(article)
+          %span= link_to 'Edit', edit_cms_article_path(article)
+          %span= link_to 'Delete', cms_article_path(article),  |
+                method: :delete,                               |
+                data: { confirm: 'Are you super-duper sure?' } |
+-if current_user.admin?
   = render partial: "admin_page", locals: { users: @users }
