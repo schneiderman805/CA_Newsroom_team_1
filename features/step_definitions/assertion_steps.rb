@@ -29,3 +29,10 @@ Then("I should see {string} in {string}") do |content, article|
       expect(page).to have_content content
   end
 end
+
+Then("I should see {string} in navbar") do |content|
+  navbar = page.find("#category_bar")
+  within(navbar) do 
+      expect(page).to have_content content
+  end
+end
