@@ -4,7 +4,7 @@
 //= require_tree .
 
 const stripeTokenHandler = (token) => {
-    let stripeForm = document.getElementById("transaction_form")
+    let stripeForm = document.getElementById("transaction_form");
     const hiddenInput = document.createElement("input");
     hiddenInput.setAttribute("type", "hidden");
     hiddenInput.setAttribute("name", "stripeToken");
