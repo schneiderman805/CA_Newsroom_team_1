@@ -39,6 +39,11 @@ RSpec.describe 'Article index', type: :request do
         expected_email = JSON.parse(response.body)['articles'][0]['category']['name']
         expect(expected_email).to eq 'Sports' 
       end
+
+      it 'includes info about image' do
+        expected_url = JSON.parse(response.body)['articles'][0]['image']
+        expect(expected_url).to match(/attachment.png/)
+      end
     end
   end
 end
