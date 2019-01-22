@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
-    @comment = @article.comments.create(comment_params)
-    if @comment.persisted?
+    @article.comments.create(comment_params)
+    if @article.comments.last.persisted?
       redirect_to article_path(@article)
     else 
       redirect_to article_path(@article), notice: "Please fill in comment"

@@ -17,18 +17,20 @@ Feature: Subscriber can comment on article
 
   Scenario: Subscriber can submit a comment [happy path]
     And I am logged in as "will@gmail.com"
-    And I click "A breaking news item"
+    When I click "A breaking news item"
     And I fill in "Body" with "This is my comment"
     And I click "Create Comment"
     Then I should see "William"
     And I should see "This is my comment"
 
   Scenario: Non-subscriber can not submit a comment [sad path]
-    And I click "A breaking news item"
+    When I click "A breaking news item"
     Then I should not see "Body"
     And I should not see "Create Comment"
 
   Scenario: Subscriber can not submit a blank comment [sad path]
-    And I click "A breaking news item"
-    Then I should not see "Body"
-    And I should not see "Create Comment"
+    Given I am logged in as "will@gmail.com"
+    Then I click "A breaking news item"
+    And I fill in "Body" with ""
+    And I click "Create Comment"
+    Then I should see "Please fill in comment"
