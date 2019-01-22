@@ -25,7 +25,6 @@ RSpec.describe 'Article index', type: :request do
       let!(:published_article) { create(:article, title: 'My first article', user: user, category: category, published: true )}
       let!(:unpublished_article) { create(:article, title: 'My second article', user: user, category: category, published: false  )}
 
-
       before do
         get '/api/articles'
       end
@@ -35,9 +34,14 @@ RSpec.describe 'Article index', type: :request do
         expect(expected_email).to eq 'journalist@mail.com' 
       end
 
+      it 'includes info about title' do
+        expected_title = JSON.parse(response.body)['articles'][0]['title']
+        expect(expected_title).to eq 'My first article' 
+      end
+
       it 'includes info about category' do
-        expected_email = JSON.parse(response.body)['articles'][0]['category']['name']
-        expect(expected_email).to eq 'Sports' 
+        expected_category = JSON.parse(response.body)['articles'][0]['category']['name']
+        expect(expected_category).to eq 'Sports' 
       end
 
       it 'includes info about image' do
