@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :update]
   end
 
+  resources :categories, only: [:show]
+
   namespace :cms do
     resources :articles
     resources :transactions, only: [:new, :create]
