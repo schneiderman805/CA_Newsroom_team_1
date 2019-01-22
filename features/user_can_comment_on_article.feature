@@ -1,6 +1,6 @@
 Feature: user can comment on article
 
-  As a Users
+  As a User
   In order to voice my opinion or ask questions
   I would like to be able to leave a comment on an article
 
