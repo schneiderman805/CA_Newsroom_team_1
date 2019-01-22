@@ -21,6 +21,8 @@ gem 'rails-i18n'
 gem 'stripe-rails'
 gem 'aws-sdk-s3'
 gem 'active_model_serializers'
+gem 'rack-cors', require: 'rack/cors'
+
 
 group :development, :test do
   gem 'factory_bot_rails'
