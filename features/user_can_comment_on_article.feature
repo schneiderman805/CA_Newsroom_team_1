@@ -1,6 +1,6 @@
-Feature: Subscriber can comment on article
+Feature: user can comment on article
 
-  As a Subscriber
+  As a Users
   In order to voice my opinion or ask questions
   I would like to be able to leave a comment on an article
 
