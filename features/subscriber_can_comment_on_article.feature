@@ -30,7 +30,7 @@ Feature: Subscriber can comment on article
 
   Scenario: Subscriber can not submit a blank comment [sad path]
     Given I am logged in as "will@gmail.com"
-    Then I click "A breaking news item"
+    When I click "A breaking news item"
     And I fill in "Body" with ""
     And I click "Create Comment"
     Then I should see "Please fill in comment"
