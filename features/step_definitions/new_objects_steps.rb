@@ -9,6 +9,12 @@ end
 
 Given("the following categories exists") do |table|
   table.hashes.each do |category|
-    category = create(:category, category)
+    create(:category, category)
+  end
+end
+
+Given("the following user exists") do |table|
+  table.hashes.each do |user|
+    create(:user, user)
   end
 end

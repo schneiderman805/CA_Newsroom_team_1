@@ -14,8 +14,8 @@ Feature: Edit/delete articles
       | Politics |
 
     And the following articles exists
-      | title                | lede                   | user_id | category_id |
-      | A breaking news item | hello this is about me | Hanna   | Sports      |
+      | title                | lede                   | user_id | category_id | published |
+      | A breaking news item | hello this is about me | Hanna   | Sports      | true      |
 
 
     And I am logged in as "hanna@tuna.se"
