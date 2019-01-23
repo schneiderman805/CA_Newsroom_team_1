@@ -2,12 +2,6 @@ When("I visit the site") do
     visit root_path
 end
 
-Given("the following user exists") do |table|
-  table.hashes.each do |user|
-    user = create(:user, user)
-  end
-end
-
 Given("visit Sign up page") do
   visit new_user_registration_path
 end
