@@ -1,31 +1,52 @@
-
-%h2 Sign up
+.flex.justify-center
+  %h2 Sign up
+  %br/
+  %br/
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
-  .field
-    = f.label :first_name
-    %br/
-    = f.text_field :first_name, autofocus: true, autocomplete: "First Name"
-    .field
-    = f.label :last_name
-    %br/
-    = f.text_field :last_name, autocomplete: "Last Name"
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Submit"
-= render "devise/shared/links"
+  .flex.justify-center
+    .flex-col.bg-grey-light.max-w-sm.rounded.overflow-hidden.shadow-lg.pt-5.pb-5.pl-5.pr-5
+      .field.text-center
+        = f.label :first_name
+        %br/
+        %br/
+        = f.text_field :first_name, autofocus: true, autocomplete: "First Name"
+        %br/
+        %br/
+      .field.text-center
+        = f.label :last_name
+        %br/
+        %br/
+        = f.text_field :last_name, autocomplete: "Last Name"
+        %br/
+        %br/
+      .field.text-center
+        = f.label :email
+        %br/
+        %br/
+        = f.email_field :email, autocomplete: "email"
+        %br/
+        %br/
+      .field.text-center
+        = f.label :password
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+        %br/
+        %br/
+      .field.text-center
+        = f.label :password_confirmation
+        %br/
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+      .actions.text-center
+        %br/
+        = f.submit "Submit"
+        %br/
+        %br/
+      .actions.text-center
+        = render "devise/shared/links"
 
