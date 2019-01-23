@@ -6,6 +6,31 @@
   = t('author') 
   = @article.user.first_name
 %p= @article.created_at.strftime("%F")
+ 
+%h2 Comments
+- @article.comments.each do |comment|
+  %p
+    %strong Commenter:
+    = comment.user.first_name
+    = comment.user.last_name
+  %p
+    %strong Comment:
+    = comment.body
+
+-if user_signed_in?
+  %h2 Add a comment:
+  = form_with model: [ @article, @article.comments.build ], local: true do |form|
+    %p
+      Commenter:
+      = current_user.first_name
+    %p
+      = form.hidden_field :user_id, value: current_user.id
+    %p
+      = form.label :body
+      %br/
+      = form.text_area :body
+    %p
+      = form.submit
 -if user_signed_in? && current_user.editor?
   = link_to 'Publish Article', cms_article_path(@article, {publish: true}), method: :patch
 = link_to 'back', articles_path 

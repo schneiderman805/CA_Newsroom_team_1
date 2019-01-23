@@ -35,6 +35,10 @@ When("I select {string} from {string}") do |option, selection|
   select option, from: `product.#{selection}`
 end
 
+Then ("show me the page") do
+  save_and_open_page
+end
+
 Given('I fill in the payment form') do
   card_no = '42'
   stripe_iframe = find("iframe[name='__privateStripeFrame4']", visible: false)
