@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   namespace :cms do
     resources :articles
     resources :transactions, only: [:new, :create]
+    resources :users, only: [:update]
   end
 
 end

@@ -14,7 +14,7 @@ class Cms::ArticlesController < ApplicationController
     if @article.save
       redirect_to cms_articles_path, notice: "Article is successfully created."
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -23,9 +23,7 @@ class Cms::ArticlesController < ApplicationController
   end
 
   def update
-    if params[:role].present?
-      update_role
-    elsif params[:publish].present?
+    if params[:publish].present?
       publish_article
     else
       update_article
@@ -45,11 +43,7 @@ class Cms::ArticlesController < ApplicationController
     params.require(:article).permit(:title, :lede, :body, :image, :category_id, :user_id)
   end
 
-  def update_role
-    @user = User.find(params[:id])
-    @user.update_attribute(:role, params[:role])
-    redirect_to cms_articles_path
-  end
+  
 
   def publish_article
     @article = Article.find(params[:id])
@@ -63,7 +57,7 @@ class Cms::ArticlesController < ApplicationController
         flash[:notice] = "Article was successfully updated."
         redirect_to cms_articles_path
       else
-        render 'edit'
+        render "edit"
       end
   end
 
