@@ -15,7 +15,7 @@ This is a simple news site built using Ruby on Rails framework. Users can create
 * Registered user can log in and log out
 * Journalist (only) can create article
 * Journalist can edit & delete their own articles
-* Subscriber can comment on articles
+* User can comment on articles
 * Journalist can add images to article 
 * Visitor can choose between English and Swedish
 
