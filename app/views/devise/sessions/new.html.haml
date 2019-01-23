@@ -1,17 +1,31 @@
-%h2 Log in
+.flex.justify-center.
+  %h2 Log in
+  %br/
+  %br/
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Submit"
-= render "devise/shared/links"
+  .flex.justify-center
+    .flex-col.bg-grey-light.max-w-xs.rounded.overflow-hidden.shadow-lg.pt-5.pb-5.pl-5.pr-5
+      .field.text-center
+        = f.label :email
+        %br/
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+        %br/
+        %br/
+        .field
+          = f.label :password
+          %br/
+          %br/
+          = f.password_field :password, autocomplete: "current-password"
+          %br/
+          %br/
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions
+          %br/
+          = f.submit "Submit"
+          %br/
+          %br/
+          = render "devise/shared/links"
