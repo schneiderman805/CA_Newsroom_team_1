@@ -8,19 +8,19 @@
       %p.block.mt-4.lg:inline-block.lg:mt-0.text-white.mr-4.text-lg= "Hello, #{current_user.first_name}!"
       - if current_user.admin?
         %p.block.mt-4.lg:inline-block.lg:mt-0.text-white.mr-4
-          = link_to "Users", cms_articles_path, class: 'text-white no-underline ml-8 text-lg'
+          = link_to "Users", cms_articles_path, class: "text-white no-underline ml-8 text-lg"
       -unless current_user.member?
         .block.mt-4.lg:inline-block.lg:mt-0.text-white.mr-4
-          = link_to "New Article", new_cms_article_path, class: 'text-white no-underline ml-8 text-lg'
+          = link_to "New Article", new_cms_article_path, class: "text-white no-underline ml-8 text-lg"
         .block.mt-4.lg:inline-block.lg:mt-0.text-white.mr-4
-          = link_to "My account", cms_articles_path, class: 'text-white no-underline ml-8 text-lg'
+          = link_to "My account", cms_articles_path, class: "text-white no-underline ml-8 text-lg"
       %p.inline-block.text-lg.px-6.py-3.mr-8.border.rounded.text-black.bg-white.ml-8.shadow-logo
-        = link_to "Log out", destroy_user_session_path, method: :delete, class: 'text-black no-underline'
+        = link_to "Log out", destroy_user_session_path, method: :delete, class: "text-black no-underline"
       - unless current_user.transactions.any? || current_user.journalist? || current_user.admin?
         %a.inline-block.text-lg.px-6.py-3.mr-8.border.rounded.text-black.bg-white.ml-8.shadow-lg{href: new_cms_transaction_path} Buy subscription
     - else
       %p.block.mt-4.lg:inline-block.lg:mt-0.text-white.mr-4
-        = link_to "Sign up", new_user_registration_path, class: 'text-white no-underline ml-8 text-lg'
+        = link_to "Sign up", new_user_registration_path, class: "text-white no-underline ml-8 text-lg"
       %p.block.mt-4.lg:inline-block.lg:mt-0.text-white.mr-4
-        = link_to "Log in", new_user_session_path, class: 'text-white no-underline ml-8 text-lg'
+        = link_to "Log in", new_user_session_path, class: "text-white no-underline ml-8 text-lg"
 

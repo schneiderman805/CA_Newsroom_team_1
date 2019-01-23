@@ -5,22 +5,22 @@
     %title Craftynews
     = csrf_meta_tags
     = csp_meta_tag
-    = javascript_pack_tag 'application'
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag "application"
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload"
+    = javascript_include_tag "application", "data-turbolinks-track": "reload"
     %link{href: "https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css", rel: "stylesheet"}/
     %script{async: "", src: "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
-    %script{src: 'https://js.stripe.com/v3/'}
+    %script{src: "https://js.stripe.com/v3/"}
     :javascript
       (adsbygoogle = window.adsbygoogle || []).push({
         google_ad_client: "ca-pub-9138077038022871",
         enable_page_level_ads: true
       });
   %body
-    = link_to_unless_current  "English", locale: 'en' 
-    = link_to_unless_current  "Svenska", locale: 'sv' 
-    = render partial: 'partials/navbar'
-    = render partial: 'partials/category_bar', locals: {categories: @categories}
+    = link_to_unless_current  "English", locale: "en" 
+    = link_to_unless_current  "Svenska", locale: "sv" 
+    = render partial: "partials/navbar"
+    = render partial: "partials/category_bar", locals: {categories: @categories}
     = notice
     = alert
     = yield

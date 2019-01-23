@@ -11,7 +11,7 @@
                 %th{align: "left"}= user.email
                 %th{align: "left"}= "Role: #{user.role}"
                 - unless user.member?
-                    %th{align: "left"}= link_to "Member", cms_article_path(user, role: 'member'), method: :patch
+                    %th{align: "left"}= link_to "Member", cms_user_path(user, role: "member"), method: :patch
                 - unless user.journalist?
-                    %th{align: "left"}= link_to "Journalist", cms_article_path(user, role: 'journalist'), method: :patch
+                    %th{align: "left"}= link_to "Journalist", cms_user_path(user, role: "journalist"), method: :patch
 
