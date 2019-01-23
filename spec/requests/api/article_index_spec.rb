@@ -8,13 +8,13 @@ RSpec.describe 'Article index', type: :request do
 
       before do
         get '/api/articles'
-			end
-			
+      end
+      
       it 'returns 200' do
         expect(response).to have_http_status(200)
       end
 
-    	it 'returns 5 articles' do
+      it 'returns 5 articles' do
         expect(JSON.parse(response.body)['articles'].count).to eq 5
       end
     end
@@ -42,11 +42,6 @@ RSpec.describe 'Article index', type: :request do
       it 'includes info about category' do
         expected_category = JSON.parse(response.body)['articles'][0]['category']['name']
         expect(expected_category).to eq 'Sports' 
-      end
-
-      it 'includes info about image' do
-        expected_url = JSON.parse(response.body)['articles'][0]['image']
-        expect(expected_url).to match(/attachment.png/)
       end
     end
   end
