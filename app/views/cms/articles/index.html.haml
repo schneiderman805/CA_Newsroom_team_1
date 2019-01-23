@@ -19,10 +19,10 @@
         -else
           %td Not Published
         %td
-          %span= link_to 'Show', article_path(article)
-          %span= link_to 'Edit', edit_cms_article_path(article)
-          %span= link_to 'Delete', cms_article_path(article),  |
+          %span= link_to "Show", article_path(article)
+          %span= link_to "Edit", edit_cms_article_path(article)
+          %span= link_to "Delete", cms_article_path(article),  |
                 method: :delete,                               |
-                data: { confirm: 'Are you super-duper sure?' } |
+                data: { confirm: "Are you sue?" } |
 -if current_user.admin?
   = render partial: "admin_page", locals: { users: @users }

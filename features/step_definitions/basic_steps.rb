@@ -2,12 +2,6 @@ When("I visit the site") do
     visit root_path
 end
 
-Given("the following user exists") do |table|
-  table.hashes.each do |user|
-    user = create(:user, user)
-  end
-end
-
 Given("visit Sign up page") do
   visit new_user_registration_path
 end
@@ -33,6 +27,10 @@ end
 
 When("I select {string} from {string}") do |option, selection|
   select option, from: `product.#{selection}`
+end
+
+Then ("show me the page") do
+  save_and_open_page
 end
 
 Given('I fill in the payment form') do

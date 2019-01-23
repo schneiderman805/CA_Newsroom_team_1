@@ -44,4 +44,4 @@ Feature: Create articles
     And I click "My account"
     And I click "New Article"
     And I click "Create Article"
-    Then I should see "6 errors prohibited this article from being saved"
+    Then I should see "3 errors prohibited this article from being saved"

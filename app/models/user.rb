@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :articles
+  has_many :comments
   has_many :transactions
   
   validates_presence_of :first_name, :last_name, :email, :encrypted_password
