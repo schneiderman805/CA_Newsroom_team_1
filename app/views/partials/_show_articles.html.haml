@@ -1,18 +1,17 @@
 - @articles.each do |article|
   .w-64.shadow-lg.text-black.text-left.bg-white.px-5.py-5.m-5.rounded-none
-    .font-mono
-      .flex.justify-start
-        %p= image_tag article.image if article.image.attached?
-      .text-xs
-        %p= article.category.name
-      %h3= link_to "#{article.title}", article  
-      .text-xl
-        %p= article.lede
-      %p
-      .flex.flex-wrap
-        .text-grey.text-sm 
-          =t('author')
-        .text-red.text-sm
-          = article.user.first_name
-          %br/
-        %p= article.created_at.strftime("%F")
+    .flex.justify-start
+      %p= image_tag article.image if article.image.attached?
+    .text-xs
+      %p= article.category.name
+    %h3= link_to "#{article.title}", article  
+    .text-xl
+      %p= article.lede
+    %p
+    .flex.flex-wrap
+      .text-grey.text-sm 
+        =t('author')
+      .text-red.text-sm
+        = article.user.first_name
+        %br/
+      %p= article.created_at.strftime("%F")

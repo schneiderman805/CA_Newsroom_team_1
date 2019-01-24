@@ -1,5 +1,5 @@
 .flex.justify-center   
-  .shadow-lg.text-black.font-mono.text-left.bg-white.px-5.py-5.m-5.text.text-center.border-2.border-black.rounded-none
+  .shadow-lg.text-black.text-left.bg-white.px-5.py-5.m-5.text.text-center.border-2.border-black.rounded-none
     %h1= @article.title
     %p= @article.category.name
     %p= image_tag @article.image if @article.image.attached?  
