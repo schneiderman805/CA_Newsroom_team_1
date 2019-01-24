@@ -1,36 +1,43 @@
-%h1= @article.title
-%p= @article.category.name
-%p= image_tag @article.image if @article.image.attached?  
-%p= @article.body
-%p 
-  = t('author') 
-  = @article.user.first_name
-%p= @article.created_at.strftime("%F")
- 
-%h2 Comments
-- @article.comments.each do |comment|
-  %p
-    %strong Commenter:
-    = comment.user.first_name
-    = comment.user.last_name
-  %p
-    %strong Comment:
-    = comment.body
-
--if user_signed_in?
-  %h2 Add a comment:
-  = form_with model: [ @article, @article.comments.build ], local: true do |form|
-    %p
-      Commenter:
-      = current_user.first_name
-    %p
-      = form.hidden_field :user_id, value: current_user.id
-    %p
-      = form.label :body
-      %br/
-      = form.text_area :body
-    %p
-      = form.submit
--if user_signed_in? && current_user.editor?
-  = link_to 'Publish Article', cms_article_path(@article, {publish: true}), method: :patch
-= link_to 'back', articles_path 
+.flex.justify-center   
+  .shadow-lg.text-black.text-left.bg-white.px-5.py-5.m-5.text.text-center.border-2.border-black.rounded-none
+    %h1= @article.title
+    %p= @article.category.name
+    %p= image_tag @article.image if @article.image.attached?  
+    .max-w-md.text-black.bg-white.px-5.py-5.m-5.text.text-center.border-2.border-black.rounded-none
+      %p= @article.body
+    %p 
+      = t('author') 
+      = @article.user.first_name
+    %p= @article.created_at.strftime("%F")
+    %br/
+    %h2 Comments
+    %br/
+    - @article.comments.each do |comment|
+      .max-w-md.shadow-lg.text-black.bg-grey-light.px-5.py-5.m-5.rounded-none.text.text-center
+        %p
+          %strong Commenter:
+          = comment.user.first_name
+          = comment.user.last_name
+        %p
+          .break-words.overflow-y-auto
+            %strong Comment:
+            = comment.body
+    -if user_signed_in?
+      %h2 Add a comment:
+      = form_with model: [ @article, @article.comments.build ], local: true do |form|
+        %p
+          Commenter:
+          = current_user.first_name
+        %p
+          = form.hidden_field :user_id, value: current_user.id
+        %p
+          = form.label :body
+          %br/
+          .flex.justify-center
+            .max-w-xs.border-2.border-black.rounded-none
+              = form.text_area :body
+        %p
+          = form.submit      
+    -if user_signed_in? && current_user.editor?
+      = link_to 'Publish Article', cms_article_path(@article, {publish: true}), method: :patch
+    = link_to 'back', articles_path 
