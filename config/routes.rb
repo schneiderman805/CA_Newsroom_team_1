@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
 
+  namespace :api do
+    resources :articles, only: [:index]
+  end
+
   namespace :cms do
     resources :articles
     resources :transactions, only: [:new, :create]
