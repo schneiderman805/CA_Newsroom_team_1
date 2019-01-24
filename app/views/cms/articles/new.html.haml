@@ -1,29 +1,54 @@
-= form_with model: @article, url: cms_articles_path  do |form|
-  - if @article.errors.any?
-    %h2
-      = pluralize(@article.errors.count, "error")
-      prohibited
-      this article from being saved:
-    %ul
-      - @article.errors.full_messages.each do |msg|
-        %li= msg 
-  %p
-    = form.label :title
-    = form.text_field :title
-  %p
-    = form.label :lede
-    = form.text_area :lede
-  %p
-    = form.label :body
-    = form.text_area :body
-  %p
-    = form.label :image
-    = form.file_field :image
-    = form.hidden_field :user_id, value: current_user.id
-  %br
-    = form.label :category
-    .Category= form.collection_select :category_id, Category.all, :id, :name 
-  %p
-    = form.submit
+.flex.justify-center
+  %h2 New article
+.mt-10.flex.justify-center
+  .flex-col.bg-grey-light.max-w-sm.overflow-hidden.shadow-lg.pt-5.pb-5.pl-5.pr-5.border-2.border-black.rounded-none
+    .field.text-center
+      = form_with model: @article, url: cms_articles_path  do |form|
+        - if @article.errors.any?
+          %h2
+            = pluralize(@article.errors.count, "error")
+            prohibited
+            this article from being saved:
+          %ul
+            - @article.errors.full_messages.each do |msg|
+              %li= msg 
+        %p
+          = form.label :title
+          %br/
+          %br/
+          = form.text_field :title
+        %p
+          %br/
+          = form.label :lede
+          %br/
+          %br/
+          .flex.justify-center
+            .border-2.border-black.rounded-none.bg-white
+              = form.text_area :lede
+        %p
+          %br/
+          = form.label :body
+          %br/
+          %br/
+          .flex.justify-center
+            .border-2.border-black.rounded-none.bg-white
+              = form.text_area :body
+        %p
+          %br/
+          = form.label :image 
+          %br/
+          %br
+          = form.file_field :image, class: "ml-32"
+          %br/
+          %br/
+          .flex.justify-end
+            = form.hidden_field :user_id, value: current_user.id
+          = form.label :category
+          %br/
+          %br/
+          .Category= form.collection_select :category_id, Category.all, :id, :name 
+        %p
+          %br/
+          = form.submit
 
 
